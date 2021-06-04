@@ -1,0 +1,55 @@
+﻿<% layout('layout') %>
+<div class="container" style="padding: 40px;padding-top: 0px">
+    <br><br>
+    <div align = "center"><img src="../images/logo.png"></div>
+   <br><br>
+   <div class="text-center reg_msg">
+        <h2 class="fancy"><span>SIGN UP</span></h2>
+   </div><br>
+   <div class="col-md-offset-4">
+         <a href="/auth/facebook" class="btn btn-block btn-social btn-facebook btn-lg">
+            <i class="fa fa-facebook"></i> Sign up with Facebook
+        </a>
+    </div><br>
+
+    <div class="row signup">
+
+        <% if(hasError) { %>
+            <% for(var i = 0; i < messages.length; i++) { %>
+                <div class="alert alert-danger">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">
+                        &#x2718;
+                    </a>
+                    <%= messages[i] %>
+                </div>
+            <% } %>
+        <% } %>
+
+        <form method="POST" class="" id="signupForm" action="/signup">
+
+            <div class="row">
+
+            <div class="form-group input_group" align="center">
+                <input id="fullname" class="form-control" name="fullname" type="text" autocomplete="on" placeholder="Họ và Tên" width="500px">
+            </div>
+            <div class="form-group input_group" align="center">
+                <input id="email" class="form-control" name="email" type="text" autocomplete="on" placeholder="Enter your mail" width="500px">
+            </div>
+
+            <div class="form-group input_group" align="center">
+                <input id="password" class="form-control" name="password" type="password" placeholder="Enter password" width="500px"">
+            </div>
+
+
+            <div class="form-group" align="center">
+                <input type="submit" id="submit" value="SIGN UP" class="form-control btn btn-primary" name="submit" width="500px">
+            </div>
+
+          </form>
+
+          <div>
+              <h4>Already have an account? <a href="/login">Login</a></h4>
+          </div>
+          </div>
+    </div>
+</div>
